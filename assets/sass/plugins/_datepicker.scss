@@ -1,0 +1,14 @@
+#app .dp__theme_light {
+  --dp-background-color: rgba(var(--v-theme-sidebar_bg), 1);
+  --dp-text-color: rgba(var(--v-theme-sidebar_text), 1);
+  --dp-hover-color: rgba(var(--v-theme-sidebar_border), 1);
+  --dp-hover-text-color: rgba(var(--v-theme-sidebar_text), 1);
+  --dp-hover-icon-color: rgba(var(--v-theme-sidebar_text), 1);
+  --dp-border-color: rgba(var(--v-theme-sidebar_border), 1);
+  --dp-menu-border-color: rgba(var(--v-theme-sidebar_border), 1);
+  --dp-border-color-hover: rgba(var(--v-theme-sidebar_border), 1);
+  --dp-disabled-color: rgba(var(--v-theme-sidebar_border), 1);
+  --dp-scroll-bar-background: rgba(var(--v-theme-sidebar_border), 1);
+  --dp-scroll-bar-color: rgba(var(--v-theme-sidebar_text), 1);
+  --dp-primary-color: rgba(var(--v-theme-primary), 1);
+}

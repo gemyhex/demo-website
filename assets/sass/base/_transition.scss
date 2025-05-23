@@ -1,0 +1,8 @@
+.dropdown-enter-active,
+.dropdown-leave-active {
+  overflow: hidden;
+}
+.dropdown-enter,
+.dropdown-leave-to {
+  height: 0;
+}

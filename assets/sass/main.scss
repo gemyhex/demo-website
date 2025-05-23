@@ -1,0 +1,278 @@
+// Abstracts
+@use "./abstracts/fonts";
+
+// Base
+@use "./base/reset";
+@use "./base/transition";
+
+// components
+@use "./components/card";
+@use "./components/checkbox";
+// Plugins
+@use "./plugins/vuetify/index";
+@use "./plugins/sweetalert";
+@use "./plugins/datepicker";
+
+* {
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-family) !important;
+}
+
+:root {
+  --font-family: "TripSans", "ExpoArabic", Arial, sans-serif;
+  --secondary-font: "ClashDisplay", "ExpoArabic", sans-serif;
+}
+
+html:lang(ar) {
+  font-family: "Cairo", serif !important;
+  --font-family: "Cairo", serif !important;
+  --secondary-font: "Cairo", serif !important;
+}
+
+html:lang(en) {
+  --font-family: "TripSans", "ExpoArabic", Arial, sans-serif;
+}
+
+.v-container {
+  max-width: 90% !important;
+}
+
+.v-card,
+.v-sheet {
+  box-shadow: none !important;
+  border: 1px solid var(--stroke, #e6e7ec) !important;
+  border-radius: 16px !important;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(var(--v-theme-dark), 1);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(var(--v-theme-primary), 1);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(var(--v-theme-primary), 0.6);
+}
+
+.v-table__wrapper {
+  border-radius: 0 !important;
+
+  thead tr th {
+    font-size: 13px;
+    font-weight: 500 !important;
+  }
+}
+
+.v-locale--is-rtl {
+  .v-table__wrapper thead tr th {
+    border: 1px solid rgba(var(--v-theme-on-surface), 1) !important;
+
+    &:first-child {
+      border-top-right-radius: 12px;
+      border-bottom-right-radius: 12px;
+    }
+
+    &:last-child {
+      border-top-left-radius: 12px;
+      border-bottom-left-radius: 12px;
+    }
+
+    &:not(:first-child) {
+      border-right: none !important;
+    }
+
+    &:not(:last-child) {
+      border-left: none !important;
+    }
+  }
+}
+
+.content > .loading {
+  min-height: unset;
+}
+
+// NOTE: radius classes
+.radius-32 {
+  border-radius: 32px !important;
+}
+
+.radius-24 {
+  border-radius: 24px !important;
+}
+
+.radius-20 {
+  border-radius: 20px !important;
+}
+
+.radius-16 {
+  border-radius: 16px !important;
+}
+
+.mt--100 {
+  margin-top: -100px;
+}
+
+.pt-100 {
+  padding-top: 100px;
+}
+
+.pb-100 {
+  padding-bottom: 100px;
+}
+
+// NOTE: font sizes
+.fs-10 {
+  font-size: 10px;
+}
+
+.fs-12 {
+  font-size: 12px;
+}
+
+.fs-14 {
+  font-size: 14px;
+}
+
+.fs-16 {
+  font-size: 16px;
+}
+
+.fs-20 {
+  font-size: 20px;
+}
+
+.fs-24 {
+  font-size: 24px;
+}
+
+.mb-80 {
+  margin-bottom: 5rem;
+}
+
+h1 {
+  font-size: clamp(25px, 5vw, 47px);
+  font-weight: 500;
+}
+
+h2 *,
+h2 {
+  font-size: 33px;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+h4 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+h5 {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+// NOTE:  badge
+.badge {
+  &-dark,
+  &-light {
+    border-radius: 12px;
+    padding: 0 8px;
+  }
+
+  &-dark {
+    background: rgba(var(--v-theme-dark), 1);
+    color: white;
+  }
+
+  &-light {
+    background: rgba(var(--v-theme-milky), 1);
+    color: black;
+  }
+}
+
+svg {
+  &.rtl-dir {
+    transform: rotate(180deg);
+  }
+}
+
+.linear-section_title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 500;
+  text-align: center;
+
+  span {
+    font-family: var(--secondary-font);
+    font-weight: 500;
+  }
+}
+
+.text-muted {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.1) -5.47%,
+    #fff 20.9%,
+    #fff 73.63%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: fit-content;
+  //color: rgba(255, 255, 255, 0.05);
+}
+
+.text-highlight {
+  color: white;
+}
+
+.embla {
+  overflow: hidden;
+  position: relative;
+  max-width: 100%;
+}
+
+.blur-background {
+  position: absolute;
+  border-radius: 50%;
+  background: #11044c;
+  filter: blur(150px);
+}
+
+.section-badge {
+  width: fit-content;
+  height: fit-content;
+  background: rgb(var(--v-theme-bg_dark));
+  border: 1px solid rgb(var(--v-theme-button_border));
+  color: rgb(var(--v-theme-white));
+  padding: 4px 16px;
+  border-radius: 32px;
+}

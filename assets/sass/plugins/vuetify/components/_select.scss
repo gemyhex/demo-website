@@ -1,0 +1,32 @@
+.v-overlay-container {
+  .v-list {
+    border-radius: 8px !important;
+    border: 1px solid #e6e7ec !important;
+    background-color: rgba(var(--v-theme-surface), 1) !important;
+    padding: 0 6px;
+    box-shadow:
+      0px 12px 16px -4px rgba(16, 24, 40, 0.08),
+      0px 4px 6px -2px rgba(16, 24, 40, 0.03) !important;
+
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      padding: 4px;
+      background: transparent;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: #eaecf0;
+      border-radius: 50%;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: #eaecf0;
+    }
+  }
+}
