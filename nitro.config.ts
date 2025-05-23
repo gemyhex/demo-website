@@ -33,6 +33,7 @@ export default defineNitroConfig({
   },
   hooks: {
     compiled() {
+      if (process.env.VERCEL) return;
       try {
         const customEntry = resolve(__dirname, "server/entry.mjs");
         const outputEntry = resolve(
